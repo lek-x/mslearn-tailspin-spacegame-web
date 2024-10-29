@@ -2,5 +2,9 @@ pool: azure-agent
 
 container: mcr.microsoft.com/dotnet/aspnet:9.0
 
+variables:
+  buildConfiguration: 'Release'
+
 steps:
-  - bash: echo "test"
+  - script: dotnet build --configuration $(build Configuration)
+    displayName: 'dotnet build $(build Configuration)'
