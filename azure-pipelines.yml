@@ -7,7 +7,8 @@ pool:
 container: mcr.microsoft.com/dotnet/sdk:8.0
 
 variables:
-  buildConfiguration: 'Release'
+  - name: buildConfiguration
+    value: 'Release'
 
 steps:
 - task: UseDotNet@2
